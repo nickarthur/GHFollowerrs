@@ -14,7 +14,7 @@
 		7375D1B8254533C900002867 /* GHFollowerrsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1B7254533C900002867 /* GHFollowerrsTests.swift */; };
 		7375D1C3254533C900002867 /* GHFollowerrsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1C2254533C900002867 /* GHFollowerrsUITests.swift */; };
 		7375D1E02545467300002867 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1DF2545467300002867 /* SearchVC.swift */; };
-		7375D1E5254546A100002867 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1E4254546A100002867 /* FavoritesVC.swift */; };
+		7375D1E5254546A100002867 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1E4254546A100002867 /* FavoritesListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		7375D1C2254533C900002867 /* GHFollowerrsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerrsUITests.swift; sourceTree = "<group>"; };
 		7375D1C4254533C900002867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7375D1DF2545467300002867 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
-		7375D1E4254546A100002867 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		7375D1E4254546A100002867 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				7375D1AB254533C800002867 /* LaunchScreen.storyboard */,
 				7375D1AE254533C800002867 /* Info.plist */,
 				7375D1DF2545467300002867 /* SearchVC.swift */,
-				7375D1E4254546A100002867 /* FavoritesVC.swift */,
+				7375D1E4254546A100002867 /* FavoritesListVC.swift */,
 			);
 			path = GHFollowerrs;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7375D1E5254546A100002867 /* FavoritesVC.swift in Sources */,
+				7375D1E5254546A100002867 /* FavoritesListVC.swift in Sources */,
 				7375D1E02545467300002867 /* SearchVC.swift in Sources */,
 				7375D1A1254533C700002867 /* AppDelegate.swift in Sources */,
 				7375D1A3254533C700002867 /* SceneDelegate.swift in Sources */,
