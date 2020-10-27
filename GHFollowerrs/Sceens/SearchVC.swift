@@ -20,6 +20,7 @@ class SearchVC: UIViewController {
         view.backgroundColor = .systemBackground // white/black based on light/dark mode
         configureLogoImageView()
         configureUserNameTextField()
+        configureCallToActionButton()
     }
     
 
@@ -54,6 +55,20 @@ class SearchVC: UIViewController {
             userNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             userNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             userNameTextField.heightAnchor.constraint(equalToConstant: 50) // tappable elements should be at least 44 points
+        ])
+    }
+    
+    private func configureCallToActionButton() {
+        view.addSubview(callToActionButton)
+        
+        callToActionButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            callToActionButton.heightAnchor.constraint(equalToConstant: 50),
+            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            
         ])
     }
 }

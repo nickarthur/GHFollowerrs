@@ -70,12 +70,12 @@ class GFTextField: UITextField {
     
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return super.textRect(forBounds: bounds).insetBy(dx: 8.0, dy: 0.0)
+        return super.textRect(forBounds: bounds).insetBy(dx: 16.0, dy: 0.0)
     }
 
 
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return super.editingRect(forBounds: bounds).insetBy(dx: 8.0, dy: 0.0)
+        return super.editingRect(forBounds: bounds).insetBy(dx: 16.0, dy: 0.0)
     }
     
 }
