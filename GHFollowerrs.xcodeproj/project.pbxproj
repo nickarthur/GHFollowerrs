@@ -111,6 +111,8 @@
 		732B94422546973E00DCA7E1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
+				732B94452546A32500DCA7E1 /* GFButton.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -166,8 +168,6 @@
 				7375D1A0254533C700002867 /* AppDelegate.swift */,
 				7375D1A2254533C700002867 /* SceneDelegate.swift */,
 				7375D1A9254533C800002867 /* Assets.xcassets */,
-				732B94452546A32500DCA7E1 /* GFButton.swift */,
-				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
 			);
 			path = GHFollowerrs;
 			sourceTree = "<group>";
