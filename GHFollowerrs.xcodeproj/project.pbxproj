@@ -20,6 +20,7 @@
 		73D4F01325491716001F8D0E /* FollwersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01225491716001F8D0E /* FollwersListVC.swift */; };
 		73D4F01825493C05001F8D0E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01725493C05001F8D0E /* String+Ext.swift */; };
 		73D4F01D25493E87001F8D0E /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */; };
+		73D4F0222549418D001F8D0E /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F0212549418D001F8D0E /* GFBodyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		73D4F01225491716001F8D0E /* FollwersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollwersListVC.swift; sourceTree = "<group>"; };
 		73D4F01725493C05001F8D0E /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
+		73D4F0212549418D001F8D0E /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
 				732B94452546A32500DCA7E1 /* GFButton.swift */,
 				73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */,
+				73D4F0212549418D001F8D0E /* GFBodyLabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				73D4F01D25493E87001F8D0E /* GFTitleLabel.swift in Sources */,
 				73D4F01825493C05001F8D0E /* String+Ext.swift in Sources */,
 				7375D1A3254533C700002867 /* SceneDelegate.swift in Sources */,
+				73D4F0222549418D001F8D0E /* GFBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
