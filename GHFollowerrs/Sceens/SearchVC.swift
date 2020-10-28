@@ -46,6 +46,7 @@ class SearchVC: UIViewController {
     
     
     private func configureUserNameTextField() {
+        userNameTextField.addDoneAccessoryView()
         view.addSubview(userNameTextField)
         
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false

@@ -19,6 +19,9 @@ class GFTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    /// initialize the textfield with a symbol to to left of the text
+    /// - Parameter userSFSymbol: SF Symbol to display as left view in the textField
     convenience init(userSFSymbol: String) {
         self.init()
         configureUserIcon(systemName: userSFSymbol)
@@ -42,6 +45,7 @@ class GFTextField: UITextField {
         ])
     }
     
+    
     private func configure() {
         clipsToBounds = true
         layer.cornerRadius = 10
@@ -63,7 +67,12 @@ class GFTextField: UITextField {
         
     }
 
+    
+    @objc private func doneTapped() {
+        resignFirstResponder()
+    }
         
+    
     override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(x: 0, y: 0, width: 40, height: bounds.height)
     }
@@ -78,4 +87,18 @@ class GFTextField: UITextField {
         return super.editingRect(forBounds: bounds).insetBy(dx: 16.0, dy: 0.0)
     }
     
+}
+
+
+extension GFTextField {
+    
+     func addDoneAccessoryView() {
+        let bar = UIToolbar()
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
+        bar.tintColor = .systemGreen
+        bar.items = [spacer,done]
+        bar.sizeToFit()
+        inputAccessoryView = bar
+    }
 }
