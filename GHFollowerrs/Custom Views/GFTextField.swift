@@ -94,12 +94,13 @@ class GFTextField: UITextField {
 extension GFTextField {
     
      func addDoneAccessoryView() {
-        let bar = UIToolbar()
+        let bar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTapped))
         bar.tintColor = .systemGreen
         bar.items = [spacer,done]
-        bar.sizeToFit()
+        bar.translatesAutoresizingMaskIntoConstraints = false
+
         inputAccessoryView = bar
     }
 }
