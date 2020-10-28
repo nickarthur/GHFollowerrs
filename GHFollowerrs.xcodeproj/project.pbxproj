@@ -19,6 +19,7 @@
 		7375D1E5254546A100002867 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1E4254546A100002867 /* FavoritesListVC.swift */; };
 		73D4F01325491716001F8D0E /* FollwersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01225491716001F8D0E /* FollwersListVC.swift */; };
 		73D4F01825493C05001F8D0E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01725493C05001F8D0E /* String+Ext.swift */; };
+		73D4F01D25493E87001F8D0E /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7375D1E4254546A100002867 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		73D4F01225491716001F8D0E /* FollwersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollwersListVC.swift; sourceTree = "<group>"; };
 		73D4F01725493C05001F8D0E /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
 				732B94452546A32500DCA7E1 /* GFButton.swift */,
+				73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				732B94462546A32500DCA7E1 /* GFButton.swift in Sources */,
 				7375D1E02545467300002867 /* SearchVC.swift in Sources */,
 				7375D1A1254533C700002867 /* AppDelegate.swift in Sources */,
+				73D4F01D25493E87001F8D0E /* GFTitleLabel.swift in Sources */,
 				73D4F01825493C05001F8D0E /* String+Ext.swift in Sources */,
 				7375D1A3254533C700002867 /* SceneDelegate.swift in Sources */,
 			);
