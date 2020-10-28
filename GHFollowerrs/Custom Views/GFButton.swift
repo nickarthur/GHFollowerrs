@@ -32,6 +32,22 @@ class GFButton: UIButton {
         layer.cornerRadius = 10
         titleLabel?.textColor = .white
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline) // bold
+        setTitleColor(.systemGray, for: .disabled)
     }
     
+}
+
+extension GFButton {
+    override var isEnabled: Bool {
+        didSet {
+            DispatchQueue.main.async {
+                if self.isEnabled {
+                    self.alpha = 1.0
+                }
+                else {
+                    self.alpha = 0.5
+                }
+            }
+        }
+    }
 }

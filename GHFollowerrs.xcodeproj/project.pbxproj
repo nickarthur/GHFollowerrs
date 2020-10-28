@@ -17,6 +17,7 @@
 		7375D1C3254533C900002867 /* GHFollowerrsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1C2254533C900002867 /* GHFollowerrsUITests.swift */; };
 		7375D1E02545467300002867 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1DF2545467300002867 /* SearchVC.swift */; };
 		7375D1E5254546A100002867 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7375D1E4254546A100002867 /* FavoritesListVC.swift */; };
+		73D4F01325491716001F8D0E /* FollwersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4F01225491716001F8D0E /* FollwersListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7375D1C4254533C900002867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7375D1DF2545467300002867 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		7375D1E4254546A100002867 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		73D4F01225491716001F8D0E /* FollwersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollwersListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				7375D1DF2545467300002867 /* SearchVC.swift */,
 				7375D1E4254546A100002867 /* FavoritesListVC.swift */,
 				7375D1AB254533C800002867 /* LaunchScreen.storyboard */,
+				73D4F01225491716001F8D0E /* FollwersListVC.swift */,
 			);
 			path = Sceens;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				732B94532546ACD100DCA7E1 /* GFTextField.swift in Sources */,
+				73D4F01325491716001F8D0E /* FollwersListVC.swift in Sources */,
 				7375D1E5254546A100002867 /* FavoritesListVC.swift in Sources */,
 				732B94462546A32500DCA7E1 /* GFButton.swift in Sources */,
 				7375D1E02545467300002867 /* SearchVC.swift in Sources */,

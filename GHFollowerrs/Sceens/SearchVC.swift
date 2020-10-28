@@ -28,6 +28,13 @@ class SearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        
+        callToActionButton.isEnabled = userNameTextField.hasText
+    }
+    
+    
+    @objc private func pushFollowersListVC() {
+        print("pushing...")
     }
     
     
@@ -70,6 +77,8 @@ class SearchVC: UIViewController {
     }
     
     private func configureCallToActionButton() {
+        callToActionButton.addTarget(self, action: #selector(pushFollowersListVC), for: .touchUpInside)
+        
         view.addSubview(callToActionButton)
         
         callToActionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -87,8 +96,11 @@ class SearchVC: UIViewController {
 
 extension SearchVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        print("Did tap return")
+        pushFollowersListVC()
         return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        callToActionButton.isEnabled = userNameTextField.hasText
     }
 }
