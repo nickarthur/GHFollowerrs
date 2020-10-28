@@ -101,8 +101,6 @@
 		732B943E254696EA00DCA7E1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				73D4F01725493C05001F8D0E /* String+Ext.swift */,
-				73D4F039254951BC001F8D0E /* UIViewController+Ext.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -124,6 +122,8 @@
 		732B94412546971200DCA7E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				73D4F01725493C05001F8D0E /* String+Ext.swift */,
+				73D4F039254951BC001F8D0E /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,12 +131,11 @@
 		732B94422546973E00DCA7E1 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
-				732B94452546A32500DCA7E1 /* GFButton.swift */,
-				73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */,
-				73D4F0212549418D001F8D0E /* GFBodyLabel.swift */,
-				73D4F0272549448E001F8D0E /* GFAlertVC.swift */,
-				73D4F0342549488A001F8D0E /* GFAlertContainerView.swift */,
+				73D4F04D254963B1001F8D0E /* ViewControllers */,
+				73D4F04C25496250001F8D0E /* TextFields */,
+				73D4F04B2549620D001F8D0E /* Views */,
+				73D4F04A25496204001F8D0E /* Buttons */,
+				73D4F049254961FA001F8D0E /* Labels */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -155,6 +154,11 @@
 		732B94442546976300DCA7E1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				7375D1A2254533C700002867 /* SceneDelegate.swift */,
+				7375D1A0254533C700002867 /* AppDelegate.swift */,
+				7375D1A9254533C800002867 /* Assets.xcassets */,
+				73D4F02F254946E1001F8D0E /* Colors.xcassets */,
+				7375D1AE254533C800002867 /* Info.plist */,
 				73D4F045254958A6001F8D0E /* Localizable.strings */,
 			);
 			path = Support;
@@ -190,11 +194,6 @@
 				732B94422546973E00DCA7E1 /* Custom Views */,
 				732B94432546975200DCA7E1 /* Sceens */,
 				732B94442546976300DCA7E1 /* Support */,
-				7375D1AE254533C800002867 /* Info.plist */,
-				7375D1A0254533C700002867 /* AppDelegate.swift */,
-				7375D1A2254533C700002867 /* SceneDelegate.swift */,
-				7375D1A9254533C800002867 /* Assets.xcassets */,
-				73D4F02F254946E1001F8D0E /* Colors.xcassets */,
 			);
 			path = GHFollowerrs;
 			sourceTree = "<group>";
@@ -215,6 +214,47 @@
 				7375D1C4254533C900002867 /* Info.plist */,
 			);
 			path = GHFollowerrsUITests;
+			sourceTree = "<group>";
+		};
+		73D4F049254961FA001F8D0E /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				73D4F0212549418D001F8D0E /* GFBodyLabel.swift */,
+				73D4F01C25493E87001F8D0E /* GFTitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		73D4F04A25496204001F8D0E /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				732B94452546A32500DCA7E1 /* GFButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		73D4F04B2549620D001F8D0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73D4F0342549488A001F8D0E /* GFAlertContainerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73D4F04C25496250001F8D0E /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				732B94522546ACD100DCA7E1 /* GFTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		73D4F04D254963B1001F8D0E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				73D4F0272549448E001F8D0E /* GFAlertVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
