@@ -34,7 +34,10 @@ class SearchVC: UIViewController {
     
     
     @objc private func pushFollowersListVC() {
-        print("pushing...")
+        let followersListVC = FollwersListVC()
+        followersListVC.userName = userNameTextField.text
+        followersListVC.title = userNameTextField.text
+        navigationController?.pushViewController(followersListVC, animated: true)
     }
     
     
