@@ -22,6 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().tintColor = UIColor.systemGreen
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.systemGreen]
     }
 
     
