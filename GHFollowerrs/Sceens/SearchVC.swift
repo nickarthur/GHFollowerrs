@@ -21,6 +21,7 @@ class SearchVC: UIViewController {
         configureLogoImageView()
         configureUserNameTextField()
         configureCallToActionButton()
+        createDismissKeyboardGesture()
     }
     
 
@@ -28,6 +29,13 @@ class SearchVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
+    
+    
+    private func createDismissKeyboardGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+    
     
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
@@ -47,6 +55,8 @@ class SearchVC: UIViewController {
     
     private func configureUserNameTextField() {
         userNameTextField.addDoneAccessoryView()
+        userNameTextField.delegate = self
+        
         view.addSubview(userNameTextField)
         
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -71,5 +81,14 @@ class SearchVC: UIViewController {
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
             
         ])
+    }
+}
+
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        print("Did tap return")
+        return true
     }
 }
