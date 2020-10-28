@@ -14,6 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 
+    fileprivate func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = UIColor.systemGreen
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.systemGreen]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemGreen]
+        UINavigationBar.appearance().prefersLargeTitles = true
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -23,10 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().tintColor = UIColor.systemGreen
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.systemGreen]
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.systemGreen]
-        UINavigationBar.appearance().prefersLargeTitles = true
+        configureNavigationBar()
     }
 
     
