@@ -14,6 +14,8 @@ class SearchVC: UIViewController {
     let userNameTextField = GFTextField(userSFSymbol: "person.fill")
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
     
+    var isUsernameEntered: Bool { return !userNameTextField.text!.isEmpty }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,15 @@ class SearchVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         
-        callToActionButton.isEnabled = userNameTextField.hasText
+        callToActionButton.isEnabled = isUsernameEntered
     }
     
     
     @objc private func pushFollowersListVC() {
+        guard isUsernameEntered else {
+            return
+        }
+        
         let followersListVC = FollwersListVC()
         followersListVC.userName = userNameTextField.text
         followersListVC.title = userNameTextField.text
@@ -104,6 +110,6 @@ extension SearchVC: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        callToActionButton.isEnabled = userNameTextField.hasText
+        callToActionButton.isEnabled = isUsernameEntered
     }
 }
