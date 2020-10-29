@@ -578,7 +578,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R57VS437T;
-				INFOPLIST_FILE = GHFollowerrs/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GHFollowerrs/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -598,7 +598,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R57VS437T;
-				INFOPLIST_FILE = GHFollowerrs/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GHFollowerrs/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

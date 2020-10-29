@@ -12,7 +12,7 @@ class SearchVC: UIViewController {
     
     let logoImageView = UIImageView()
     let userNameTextField = GFTextField(userSFSymbol: "person.fill")
-    let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    let callToActionButton = GFButton(backgroundColor: .systemGreen, title: NSLocalizedString("Get Followers", comment: ""))
     
     var isUsernameEntered: Bool { return !userNameTextField.text!.isEmpty }
     
@@ -37,7 +37,9 @@ class SearchVC: UIViewController {
     
     @objc private func pushFollowersListVC() {
         guard isUsernameEntered else {
-            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter a username. WE need to know who to look for 😀.", buttonTitle: "Ok")
+            let title = NSLocalizedString("Empty Username", comment: "user name is missing")
+            let message = NSLocalizedString("Please enter a username. WE need to know who to look for 😀.", comment: "")
+            presentGFAlertOnMainThread(title: title, message: message, buttonTitle: "Ok")
             return
         }
         

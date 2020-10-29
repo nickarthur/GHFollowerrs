@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createSearchNC() -> UINavigationController {
         let searchVC = SearchVC()
-        searchVC.title = "Search"
+        searchVC.title = NSLocalizedString("Search", comment: "to look for something")
         searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
         return UINavigationController(rootViewController: searchVC)
@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func creatFavoritesNC() -> UINavigationController {
         let favoritesListVC = FavoritesListVC()
-        favoritesListVC.title = "Favorites"
+        favoritesListVC.title = NSLocalizedString("Favorites", comment: "I really Like these")
         favoritesListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         return UINavigationController(rootViewController: favoritesListVC)
     }
@@ -78,7 +78,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
 
     }
-
 
 }
 
