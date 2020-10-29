@@ -146,20 +146,20 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
-		732B94432546975200DCA7E1 /* Sceens */ = {
+		732B94432546975200DCA7E1 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				7375D1DF2545467300002867 /* SearchVC.swift */,
 				7375D1E4254546A100002867 /* FavoritesListVC.swift */,
-				7375D1AB254533C800002867 /* LaunchScreen.storyboard */,
 				73D4F01225491716001F8D0E /* FollwersListVC.swift */,
 			);
-			path = Sceens;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		732B94442546976300DCA7E1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				7375D1AB254533C800002867 /* LaunchScreen.storyboard */,
 				7375D1A2254533C700002867 /* SceneDelegate.swift */,
 				7375D1A0254533C700002867 /* AppDelegate.swift */,
 				7375D1A9254533C800002867 /* Assets.xcassets */,
@@ -198,7 +198,7 @@
 				732B94402546970900DCA7E1 /* Model */,
 				732B94412546971200DCA7E1 /* Extensions */,
 				732B94422546973E00DCA7E1 /* Custom Views */,
-				732B94432546975200DCA7E1 /* Sceens */,
+				732B94432546975200DCA7E1 /* Screens */,
 				732B94442546976300DCA7E1 /* Support */,
 			);
 			path = GHFollowerrs;
