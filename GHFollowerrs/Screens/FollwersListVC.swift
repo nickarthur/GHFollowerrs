@@ -22,7 +22,7 @@ class FollwersListVC: UIViewController {
             }
             
             guard let followers = followers else {
-                self.presentGFAlertOnMainThread(title: "Bad stuff happened", message: errorMessage!, buttonTitle: "Ok")
+                self.presentGFAlertOnMainThread(title: "Bad stuff happened", message: errorMessage ?? "unknown Error", buttonTitle: "Ok")
                 return
             }
             
