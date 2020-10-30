@@ -16,18 +16,21 @@ class FollwersListVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        NewtworkManager.shared.getFollowers(for: userName, page: 1) { [weak self] (followers, errorMessage) in
+        NewtworkManager.shared.getFollowers(for: userName, page: 1) { [weak self] result in
             guard let self = self else {
                 return
             }
             
-            guard let followers = followers else {
-                self.presentGFAlertOnMainThread(title: "Bad stuff happened", message: errorMessage ?? "unknown Error", buttonTitle: "Ok")
-                return
+            switch result {
+            case .success(let followers):
+                print("Followers.count = \(followers.count)")
+                print(followers)
+                break
+            case .failure(let error):
+                let title = NSLocalizedString("Request Error", comment: "Request Error")
+                self.presentGFAlertOnMainThread(title: title, message: error.localizedString, buttonTitle: GFButton.defaultTitle)
+                break
             }
-            
-            print("Followers.count = \(followers.count)")
-            print(followers)
         }
     }
     

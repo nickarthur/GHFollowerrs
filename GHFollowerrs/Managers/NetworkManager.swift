@@ -15,31 +15,27 @@ class NewtworkManager {
     
     private init() {}
     
-    func getFollowers(for username: String, page: Int, completion: @escaping ([Follower]?, String?) -> Void) {
+    func getFollowers(for username: String, page: Int, completion: @escaping (Result<[Follower], GFError>) -> Void) {
         
         let endpoint = baseURL + "/users/\(username)/followers?per_page=\(perPage)&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
-            let errorMessage = ErrorMessage.invalidUsername.localizedString
-            completion(nil, errorMessage)
+            completion(.failure(.invalidUsername))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let _ = error {
-                let errorMessage = ErrorMessage.unableToComplete.localizedString
-                completion(nil, errorMessage)
+                completion(.failure(.unableToComplete))
             }
             
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                let errorMessage = ErrorMessage.invalidResponse.localizedString
-                completion(nil, errorMessage)
+                completion(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                let errorMessage = ErrorMessage.invalidData.localizedString
-                completion(nil, errorMessage)
+                completion(.failure(.invalidData))
                 return
             }
             
@@ -47,10 +43,9 @@ class NewtworkManager {
             
             do {
                 let followers = try decoder.decode([Follower].self, from: data)
-                completion(followers, nil)
+                completion(.success(followers))
             } catch {
-                let errorMessage = ErrorMessage.invalidData.localizedString
-                completion(nil, errorMessage)
+                completion(.failure(.invalidData))
             }
         }
         

@@ -20,7 +20,7 @@ private struct LocalizableErrorStrings {
                                                comment: "Invalid data received")
 }
 
-enum ErrorMessage: String {
+enum GFError: String, Error {
     case invalidUsername
     case unableToComplete
     case invalidResponse
