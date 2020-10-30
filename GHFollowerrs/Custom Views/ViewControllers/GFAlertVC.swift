@@ -35,7 +35,7 @@ class GFAlertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(named: "alert.bgColor")
+        view.backgroundColor = UIColor(named: "alert-bgColor")
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
