@@ -39,7 +39,7 @@ class SearchVC: UIViewController {
         guard isUsernameEntered else {
             let title = NSLocalizedString("Empty Username", comment: "user name is missing")
             let message = NSLocalizedString("Please enter a username. WE need to know who to look for 😀.", comment: "")
-            presentGFAlertOnMainThread(title: title, message: message, buttonTitle: "Ok")
+            presentGFAlertOnMainThread(title: title, message: message, buttonTitle: GFButton.defaultTitle)
             return
         }
         

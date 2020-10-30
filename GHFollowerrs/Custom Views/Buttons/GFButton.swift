@@ -9,6 +9,8 @@ import UIKit
 
 class GFButton: UIButton {
 
+    static let defaultTitle: String = NSLocalizedString("Ok", comment: "Ok Button Title")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
