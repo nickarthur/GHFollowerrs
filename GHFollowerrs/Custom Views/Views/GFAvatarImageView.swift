@@ -25,6 +25,6 @@ class GFAvatarImageView: UIImageView {
     private func configure() {
         layer.cornerRadius = 10
         clipsToBounds = true
-        image = placeHolderImage
+        image = placeHolderImage //sensible default if user has no avatar url
     }
 }
