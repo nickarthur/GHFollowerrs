@@ -34,12 +34,15 @@ class GFAvatarImageView: UIImageView {
             return // note placeholder image will be displayed in case error occurs
         }
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil { return }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200,
+                  let data = data,
+                  let image = UIImage(data: data) else { return }
             
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                self.image = UIImage(data: data)
+                self.image = image
             }
         }
         task.resume()
@@ -48,13 +51,16 @@ class GFAvatarImageView: UIImageView {
     
     func downloadImage(from url: URL) {
         
-        let task = URLSession.shared.dataTask(with: url,completionHandler: { (data, response, error) in
-            guard error == nil, let data = data else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.image = UIImage(data: data)
-            }
+        let task = URLSession.shared.dataTask(with: url,completionHandler: { data, response, error in
+            guard error == nil,
+                  let response = response as? HTTPURLResponse, response.statusCode == 200,
+                  let data = data,
+                  let image = UIImage(data: data) else { return }
+                  
+                  DispatchQueue.main.async { [weak self] in
+                      guard let self = self else { return }
+                      self.image = image
+                  }
         })
         task.resume()
     }
