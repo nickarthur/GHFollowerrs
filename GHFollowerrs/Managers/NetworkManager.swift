@@ -5,12 +5,13 @@
 //  Created by Larry Nickerson on 10/29/20.
 //
 
-import Foundation
+import UIKit
 
 class NewtworkManager {
 
     static let shared = NewtworkManager()
-    let baseURL = "https://api.github.com"
+    private let baseURL = "https://api.github.com"
+    static let cache = NSCache<NSString, UIImage>()
     let perPage = 100
     
     private init() {}

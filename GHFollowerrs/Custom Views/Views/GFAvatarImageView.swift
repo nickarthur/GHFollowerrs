@@ -9,6 +9,7 @@ import UIKit
 
 class GFAvatarImageView: UIImageView {
 
+    let cache = NewtworkManager.cache
     let placeHolderImage = UIImage(named: "avatar-placeholder")!
     
     override init(frame: CGRect) {
@@ -30,6 +31,13 @@ class GFAvatarImageView: UIImageView {
     
     
     func downloadImage(from urlString: String) {
+        
+        let cacheKey = NSString(string: urlString)
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
+            return
+        }
+        
         guard let url = URL(string: urlString) else {
             return // note placeholder image will be displayed in case error occurs
         }
@@ -39,11 +47,10 @@ class GFAvatarImageView: UIImageView {
             guard let response = response as? HTTPURLResponse, response.statusCode == 200,
                   let data = data,
                   let image = UIImage(data: data) else { return }
-            
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.image = image
-            }
+
+            self.cache.setObject(image, forKey: cacheKey)
+
+            DispatchQueue.main.async { self.image = image }
         }
         task.resume()
     }
@@ -51,16 +58,23 @@ class GFAvatarImageView: UIImageView {
     
     func downloadImage(from url: URL) {
         
+        let urlString = url.absoluteString
+        let cacheKey  = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
+            return
+        }
+        
         let task = URLSession.shared.dataTask(with: url,completionHandler: { data, response, error in
             guard error == nil,
                   let response = response as? HTTPURLResponse, response.statusCode == 200,
                   let data = data,
                   let image = UIImage(data: data) else { return }
-                  
-                  DispatchQueue.main.async { [weak self] in
-                      guard let self = self else { return }
-                      self.image = image
-                  }
+       
+            self.cache.setObject(image, forKey: cacheKey)
+    
+            DispatchQueue.main.async { self.image = image }
         })
         task.resume()
     }
