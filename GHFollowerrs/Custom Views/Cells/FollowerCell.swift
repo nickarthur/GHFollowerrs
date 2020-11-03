@@ -29,8 +29,9 @@ class FollowerCell: UICollectionViewCell {
     
     func setFollower(follower: Follower) {
         userLabel.text = follower.login
-        // TODO: populate avatar image
-        //avatarImageView.image = UIImage(...
+        // note I chose to let decoding convert urls into URL type so this diverges from the course
+        // to keep it simple i opted to code a method that takes the URL
+        avatarImageView.downloadImage(from: follower.avatarUrl)
     }
     
     private func configure() {
