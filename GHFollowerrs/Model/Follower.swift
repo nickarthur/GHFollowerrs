@@ -11,10 +11,11 @@ struct Follower: Codable, Hashable { // adopt Hashable to work with diffable dat
     var login: String
     var avatarUrl: URL
 
-    // not required for this simple example
-//    func hash(into hasher: inout Hasher) {
-//        hasher.combine(login)
-//    }
+    // not required for this simple example -- as login being a String is hashable
+    // NOTE: this could be a UUID if coming from a database for example
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(login)
+    }
     
     
     private enum CodingKeys: String, CodingKey {
