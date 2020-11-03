@@ -18,6 +18,7 @@ class FollowersListVC: UIViewController {
         case main
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,7 +61,6 @@ class FollowersListVC: UIViewController {
     }
     
     
-    
     private func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
         let width                       = view.bounds.width
         let padding: CGFloat            = 12
@@ -80,14 +80,18 @@ class FollowersListVC: UIViewController {
             guard let self = self else {
                 return
             }
-            
+
             switch result {
             case .success(let followers):
                 print("Followers.count = \(followers.count)")
                 print(followers)
                 self.followers = followers
+                
                 DispatchQueue.main.async { [weak self] in
-                    self?.updateData()
+                    guard let self = self else {
+                        return
+                    }
+                    self.updateData()
                 }
             case .failure(let error):
                 let title = NSLocalizedString("Request Error", comment: "Request Error")
@@ -98,6 +102,7 @@ class FollowersListVC: UIViewController {
             }
         }
     }
+    
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView,
