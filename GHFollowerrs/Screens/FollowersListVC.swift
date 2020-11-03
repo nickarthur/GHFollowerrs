@@ -44,7 +44,7 @@ class FollowersListVC: UIViewController {
         collectionView = UICollectionView(frame: view.bounds,
                                           collectionViewLayout: createThreeColumnFlowLayout())
 
-        collectionView.backgroundColor  = .systemPink
+        collectionView.backgroundColor  = .systemBackground
         collectionView.register(FollowerCell.self,
                                 forCellWithReuseIdentifier: FollowerCell.reuseID)
         view.addSubview(collectionView)
@@ -100,8 +100,12 @@ class FollowersListVC: UIViewController {
     }
     
     func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView,
+                                                                           cellProvider: { (collectionView,
+                                                                                            indexPath,
+                                                                                            follower) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID,
+                                                          for: indexPath) as! FollowerCell
             cell.setFollower(follower: follower)
             return cell
             
