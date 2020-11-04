@@ -127,9 +127,5 @@ extension FollowersListVC: UICollectionViewDelegate {
             page += 1
             getFollowers(userName: userName, page: page)
         }
-        
-        print(" Content OffsetY = \(offsetY)")
-        print("   ContentHeight = \(contentHeight)")
-        print("     scrollView Frame height = \(height)\n")
     }
 }
