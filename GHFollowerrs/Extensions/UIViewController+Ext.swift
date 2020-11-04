@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate var containerView: UIView! // TODO: REMOVE THIS global var for this file only
+fileprivate var containerView: UIView? // TODO: REMOVE THIS global var for this file only
 
 extension UIViewController {
     
@@ -24,7 +24,10 @@ extension UIViewController {
     
     
     func showLoadingView() {
+        
         containerView = UIView(frame: view.bounds)
+        guard let containerView = containerView else { return }
+        
         containerView.backgroundColor = .systemBackground
         containerView.alpha = 0
         
@@ -47,8 +50,9 @@ extension UIViewController {
     
     
     func dismissLoadingView() {
+        
         DispatchQueue.main.async {
-            containerView.removeFromSuperview()
+            containerView?.removeFromSuperview()
             containerView = nil
         }
     }
