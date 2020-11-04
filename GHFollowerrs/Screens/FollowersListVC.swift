@@ -69,25 +69,18 @@ class FollowersListVC: UIViewController {
         self.showLoadingView()
         
         NewtworkManager.shared.getFollowers(for: userName, page: page) { [weak self] result in
+            
             guard let self = self else {
                 return
             }
-
+            self.dismissLoadingView()
+            
             switch result {
             case .success(let followers):
-                //print("Followers.count = \(followers.count)")
-                //print(followers)
-                self.followers.append(contentsOf: followers)
-                
                 if followers.count < self.perPage { self.hasMoreFollowers = false }
-                
-                DispatchQueue.main.async { [weak self] in
-                    guard let self = self else {
-                        return
-                    }
-                    self.updateData()
-                    self.dismissLoadingView()
-                }
+                self.followers.append(contentsOf: followers)
+                self.updateData()
+
             case .failure(let error):
                 let title = NSLocalizedString("Request Error", comment: "Request Error")
                 self.presentGFAlertOnMainThread(title: title,
