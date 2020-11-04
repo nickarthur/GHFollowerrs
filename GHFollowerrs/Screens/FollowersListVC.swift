@@ -86,7 +86,7 @@ class FollowersListVC: UIViewController {
                         return
                     }
                     self.updateData()
-                    #warning("DISMISS THE LOADING VIEW")
+                    self.dismissLoadingView()
                 }
             case .failure(let error):
                 let title = NSLocalizedString("Request Error", comment: "Request Error")
