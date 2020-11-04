@@ -66,6 +66,8 @@ class FollowersListVC: UIViewController {
     
     private func getFollowers(userName: String, page: Int) {
         
+        self.showLoadingView()
+        
         NewtworkManager.shared.getFollowers(for: userName, page: page) { [weak self] result in
             guard let self = self else {
                 return
@@ -84,6 +86,7 @@ class FollowersListVC: UIViewController {
                         return
                     }
                     self.updateData()
+                    #warning("DISMISS THE LOADING VIEW")
                 }
             case .failure(let error):
                 let title = NSLocalizedString("Request Error", comment: "Request Error")
