@@ -79,7 +79,7 @@ class FollowersListVC: UIViewController {
             case .success(let followers):
                 if followers.count < self.perPage { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
-                self.followers = []
+
                 if self.followers.isEmpty {
                     let message = NSLocalizedString("This user doesn't have any followers. Go follow them.", comment: "no followers found")
                     DispatchQueue.main.async {
