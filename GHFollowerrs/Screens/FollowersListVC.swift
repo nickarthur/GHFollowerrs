@@ -14,6 +14,7 @@ class FollowersListVC: UIViewController {
     var perPage: Int = 100
     var hasMoreFollowers = true
     var followers: [Follower] = []
+    var filteredFollowers: [Follower] = []
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
             
@@ -28,6 +29,7 @@ class FollowersListVC: UIViewController {
         configureViewController()
         configureCollectionView()
         configureDataSource()
+        configureSearchController()
         getFollowers(userName: userName, page: page)
     }
     
@@ -61,6 +63,19 @@ class FollowersListVC: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    
+    private func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = NSLocalizedString("Search for a username", comment: "search for a user")
+        searchController.automaticallyShowsCancelButton = true
+        searchController.automaticallyShowsScopeBar = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.hidesBottomBarWhenPushed = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
     }
     
     
@@ -136,4 +151,17 @@ extension FollowersListVC: UICollectionViewDelegate {
             getFollowers(userName: userName, page: page)
         }
     }
+}
+
+
+extension FollowersListVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
+        
+        filteredFollowers = followers.filter({ (follower) -> Bool in
+            return follower.login.lowercased().contains(searchText.lowercased())
+        })
+    }
+    
+    
 }
