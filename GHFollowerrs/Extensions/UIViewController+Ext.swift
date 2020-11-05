@@ -57,6 +57,17 @@ extension UIViewController {
             containerView = nil
         }
     }
+    
+    
+    /// displays the GFEmptyStateView with in the bounds of the given input view.
+    /// - Parameters:
+    ///   - message: the message to display within the view
+    ///   - view: the view to which the empty state view fills
+    func showEmptyStateView(with message: String, in view: UIView) {
+        let emptyStateView = GFEmptyStateView(message: message)
+        emptyStateView.frame = view.bounds
+        view.addSubview(emptyStateView)
+    }
 
 }
 
