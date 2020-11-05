@@ -7,7 +7,8 @@
 
 import UIKit
 
-fileprivate var containerView: UIView? // TODO: REMOVE THIS global var for this file only
+#warning(" TODO: REMOVE THIS global var for this file only")
+fileprivate var containerView: UIView?
 
 extension UIViewController {
     
