@@ -158,9 +158,7 @@ extension FollowersListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
         
-        filteredFollowers = followers.filter({ (follower) -> Bool in
-            return follower.login.lowercased().contains(searchText.lowercased())
-        })
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(searchText.lowercased())  }
     }
     
     
