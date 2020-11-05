@@ -102,7 +102,7 @@ class FollowersListVC: UIViewController {
                     }
                     return
                 }
-                self.updateData()
+                self.updateData(with: self.followers)
 
             case .failure(let error):
                 let title = NSLocalizedString("Request Error", comment: "Request Error")
@@ -129,7 +129,7 @@ class FollowersListVC: UIViewController {
     }
     
     
-    func updateData() {
+    func updateData(with followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -159,6 +159,7 @@ extension FollowersListVC: UISearchResultsUpdating {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else { return }
         
         filteredFollowers = followers.filter { $0.login.lowercased().contains(searchText.lowercased())  }
+        updateData(with: filteredFollowers)
     }
     
     
