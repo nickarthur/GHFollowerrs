@@ -152,6 +152,11 @@ extension FollowersListVC: UICollectionViewDelegate {
             getFollowers(userName: userName, page: page)
         }
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        present(UserInfoVC(), animated: true, completion: nil)
+    }
 }
 
 
