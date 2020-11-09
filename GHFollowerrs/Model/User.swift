@@ -8,17 +8,17 @@
 import Foundation
 
 struct User: Codable {
-    var login: String
-    var avatarUrl: URL
-    var htmlUrl: URL
+    let login: String
+    let avatarUrl: URL
+    let htmlUrl: URL
     var name: String?
     var location: String?
     var bio: String?
-    var publicRepos: Int
-    var publicGists: Int
-    var followers: Int
-    var following: Int
-    var createdAt: String
+    let publicRepos: Int
+    let publicGists: Int
+    let followers: Int
+    let following: Int
+    let createdAt: String
     
     private enum CodingKeys: String, CodingKey {
         case login
