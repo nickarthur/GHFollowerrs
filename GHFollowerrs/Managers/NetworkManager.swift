@@ -7,9 +7,9 @@
 
 import UIKit
 
-class NewtworkManager {
+class NetworkManager {
 
-    static let shared = NewtworkManager()
+    static let shared = NetworkManager()
     private let baseURL = "https://api.github.com"
     static let cache = NSCache<NSString, UIImage>()
     let perPage = 100
@@ -51,7 +51,43 @@ class NewtworkManager {
         }
         
         task.resume()
-        
     }
     
+    
+    func getUserInfo(for username: String, completion: @escaping (Result<User, GFError>) -> Void) {
+        
+        let endpoint = baseURL + "/users/\(username)"
+        
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.invalidUsername))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let _ = error {
+                completion(.failure(.unableToComplete))
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.invalidResponse))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let user = try decoder.decode(User.self, from: data)
+                completion(.success(user))
+            } catch {
+                completion(.failure(.invalidData))
+            }
+        }
+        
+        task.resume()
+    }
 }

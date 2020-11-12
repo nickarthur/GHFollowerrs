@@ -81,7 +81,7 @@ class FollowersListVC: UIViewController {
         
         self.showLoadingView()
         
-        NewtworkManager.shared.getFollowers(for: userName, page: page) { [weak self] result in
+        NetworkManager.shared.getFollowers(for: userName, page: page) { [weak self] result in
             
             guard let self = self else {
                 return
@@ -107,7 +107,6 @@ class FollowersListVC: UIViewController {
                 self.presentGFAlertOnMainThread(title: title,
                                                 message: error.localizedString,
                                                 buttonTitle: GFButton.defaultTitle)
-                break
             }
         }
     }
