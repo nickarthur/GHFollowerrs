@@ -43,7 +43,7 @@ class NetworkManager {
             let decoder = JSONDecoder()
             
             do {
-                let followers = try decoder.decode([Follower].self, from: data)
+                let followers = try decoder.decode([Follower].self, from:  data)
                 completion(.success(followers))
             } catch {
                 completion(.failure(.invalidData))

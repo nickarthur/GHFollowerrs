@@ -130,10 +130,9 @@ class FollowersListVC: UIViewController {
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
+        snapshot.appendItems(followers,toSection: .main)
         DispatchQueue.main.async { [weak self] in
             self?.dataSource?.apply(snapshot, animatingDifferences: true, completion: nil)
-
         }
     }
 }
